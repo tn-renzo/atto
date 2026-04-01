@@ -14,7 +14,6 @@ func EnableRawMode() (func(), error) {
 		return nil, err
 	}
 
-	// Return a cleanup function that the caller can defer
 	restore := func() {
 		term.Restore(int(os.Stdin.Fd()), oldState)
 	}
